@@ -1,0 +1,24 @@
+{
+  "name": "typescript_rpg_minigame",
+  "version": "1.0.0",
+  "description": "RPG minigame project for practice using Object-Oriented Programming (OOP) features in TypeScript. It's a basic RPG character system, applying the following OOP concepts: public/private/protected access modifiers, readonly properties, static class members, abstract classes and methods, interface implementation, and getters/setters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red4cted25/typescript_rpg_minigame.git"
+  },
+  "keywords": [],
+  "author": "Nicolas Diaz <nicolas.m.diaz07@gmail.com>",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/red4cted25/typescript_rpg_minigame/issues"
+  },
+  "homepage": "https://github.com/red4cted25/typescript_rpg_minigame#readme",
+  "dependencies": {
+    "typescript": "^5.8.3"
+  }
+}
