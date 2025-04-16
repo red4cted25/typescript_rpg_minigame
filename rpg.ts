@@ -19,13 +19,14 @@ abstract class GameCharacter implements CharacterStats {
         this.level = level;
         this._health = health;
         this.id = Math.floor(Math.random() * 10000);
+
         this.strength = strength;
         this.agility = agility;
         this.intelligence = intelligence;
     }
 
-    get health(): number {
-        return this._health;
+    get health(): string {
+        return `${this._health} health points`;
     }
 
     set health(value: number) {
@@ -55,7 +56,7 @@ class Warrior extends GameCharacter {
     }
 
     attack(): string {
-        return `${this.name} swings a sword!`;
+        return `\x1b[31m${this.name} swings a sword! \x1b[0m`;
     }
 
     getStats(): string {
@@ -69,7 +70,7 @@ class Mage extends GameCharacter {
     }
 
     attack(): string {
-        return `${this.name} casts a fireball!`;
+        return `\x1b[36m${this.name} casts a fireball! \x1b[0m`;
     }
 
     getStats(): string {
@@ -83,7 +84,7 @@ class Necromancer extends Mage {
     }
 
     attack(): string {
-        return `${this.name} raises the dead!`;
+        return `\x1b[35m${this.name} raises the dead! \x1b[0m`;
     }
 
     castCurse(): string {
@@ -101,7 +102,7 @@ class Archer extends GameCharacter {
     }
 
     attack(): string {
-        return `${this.name} shoots an arrow!`;
+        return `\x1b[32m${this.name} shoots an arrow!\x1b[0m`;
     }
 
     getStats(): string {
@@ -112,8 +113,24 @@ class Archer extends GameCharacter {
 let warrior = new Warrior("Conan", 1, 100);
 console.log(warrior.attack());
 warrior.levelUp();
+warrior.health = 90;
 console.log(warrior.getStats());
+
+console.log('')
 
 let mage = new Mage("Gandalf", 1, 80);
 console.log(mage.attack());
+console.log(mage.health);
 console.log(mage.getStats());
+
+console.log('')
+
+let necromancer = new Necromancer("Sung Jin-Woo", 1, 80);
+console.log(necromancer.attack());
+console.log(necromancer.getStats());
+
+console.log('')
+
+let archer = new Archer("Robin Hood", 1, 80);
+console.log(archer.attack());
+console.log(archer.getStats());
